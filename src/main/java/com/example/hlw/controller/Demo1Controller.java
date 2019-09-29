@@ -1,7 +1,6 @@
 package com.example.hlw.controller;
 
 import com.example.hlw.dto.UserDto;
-import com.google.gson.Gson;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -26,6 +25,8 @@ public class Demo1Controller {
 
     @PostMapping("get/dto")
     public String getDto(@RequestBody UserDto userDto){
-        return new Gson().toJson(userDto);
+
+        return "";
+     //   return new Gson().toJson(userDto);
     }
 }
