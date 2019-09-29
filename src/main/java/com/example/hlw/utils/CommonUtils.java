@@ -1,5 +1,8 @@
 package com.example.hlw.utils;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
 /**
  * 通用的处理工具
  */
@@ -10,7 +13,16 @@ public class CommonUtils  {
      * @param clz
      * @return
      */
-    private static boolean isJavaClass(Class<?> clz) {
+    public static boolean isJavaClass(Class<?> clz) {
         return clz != null && clz.getClassLoader() == null;
+    }
+
+    /**
+     * 判断一个熟悉是不是公共属性
+     * @param field
+     * @return
+     */
+    public static boolean isPublicProperty(Field field){
+        return Modifier.isPublic(field.getModifiers());
     }
 }

@@ -121,6 +121,8 @@ public class EntityUtils {
         try {
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
+                field.getModifiers();
+
                 ApiModelProperty apiModelProperty = field.getAnnotation(ApiModelProperty.class);
                 String propertyEnable = "非必填";
                 NotNull notNull = field.getAnnotation(NotNull.class);
